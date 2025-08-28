@@ -97,15 +97,25 @@ public class SupplierController {
 
     @PostMapping("/modifySupplier")
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> modifySupplier(@ModelAttribute SupplierVO supplierVO,
-                                                              @RequestParam(value = "supplierFile", required = false) MultipartFile supplierFile) {
+    public ResponseEntity<Map<String, Object>> modifySupplier(
+            @RequestParam("supplierNo") int supplierNo,
+            @RequestParam("supplierName") String supplierName,
+            @RequestParam("supplierAddress") String supplierAddress,
+            @RequestParam("supplierBusinessNo") String supplierBusinessNo,
+            @RequestParam("managerName") String managerName,
+            @RequestParam("managerPhone") String managerPhone,
+            @RequestParam("managerEmail") String managerEmail,
+            @RequestParam(value = "supplierFile", required = false) MultipartFile supplierFile,
+            @RequestParam(value = "existingFile", required = false) String existingFile
+    ) {
         Map<String, Object> response = new HashMap<>();
 
         try {
+            String savedFilename = existingFile;
+
             if (supplierFile != null && !supplierFile.isEmpty()) {
                 String filename = System.currentTimeMillis() + "_" + supplierFile.getOriginalFilename();
                 String directoryPath = "/Users/narin/Desktop/첨부파일/";
-//                String directoryPath = "D:/file_repo/";
                 File dir = new File(directoryPath);
 
                 if (!dir.exists()) {
@@ -114,23 +124,38 @@ public class SupplierController {
 
                 String filePath = directoryPath + filename;
                 supplierFile.transferTo(new File(filePath));
-                supplierVO.setSupplierFile(filename);
+                savedFilename = filename;
             }
-            boolean result = supplierService.modifySupplier(supplierVO);
+
+            SupplierVO vo = new SupplierVO();
+            vo.setSupplierNo((long) supplierNo);
+            vo.setSupplierName(supplierName);
+            vo.setSupplierAddress(supplierAddress);
+            vo.setSupplierBusinessNo(supplierBusinessNo);
+            vo.setManagerName(managerName);
+            vo.setManagerPhone(managerPhone);
+            vo.setManagerEmail(managerEmail);
+            vo.setSupplierFile(savedFilename);
+
+            boolean result = supplierService.modifySupplier(vo);
 
             if (result) {
                 response.put("success", true);
                 response.put("message", "성공적으로 수정되었습니다.");
+                response.put("filename", savedFilename);
+
             } else {
                 response.put("success", false);
                 response.put("message", "수정에 실패했습니다.");
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            response.put("success", false);
+            response.put("message", "서버 오류 발생: " + e.getMessage());
         }
         return ResponseEntity.ok(response);
     }
+
 
     @GetMapping("/viewFile/{fileName}")
     public ResponseEntity<Resource> viewFile(@PathVariable String fileName) throws IOException {
@@ -141,16 +166,17 @@ public class SupplierController {
         if (file.exists()) {
             Path path = Paths.get(file.getAbsolutePath());
             Resource resource = new UrlResource(path.toUri());
-            String contentType = Files.probeContentType(path);
 
+            String contentType = Files.probeContentType(path);
             if (contentType == null) {
                 contentType = "application/octet-stream";
             }
+
             return ResponseEntity.ok()
                     .contentType(MediaType.parseMediaType(contentType))
                     .body(resource);
         }
-        return null;
+        return ResponseEntity.notFound().build();
     }
 
     @GetMapping("checkSupplierName")

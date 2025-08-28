@@ -225,12 +225,12 @@
         }
     }
 
-    // 업체등록 버튼 클릭 시 체크박스가 선택되지 않았을 때만 모달 열기
+    // 구매신청
     function requestPurchase() {
-        const checkedPurchase = document.querySelector('input[name="purchase"]:checked');
-        if (checkedPurchase) {
-            alert('선택을 해제해주세요');
-        } else {
+//        const checkedPurchase = document.querySelector('input[name="purchase"]:checked');
+//        if (checkedPurchase) {
+//            alert('선택을 해제해주세요');
+//        } else {
             $.ajax({
                 url: '/inventory/getSuppliers',
                 type: 'get',
@@ -248,7 +248,7 @@
             });
 
             document.getElementById("popup-regist").style.display = "flex";
-        }
+//        }
     }
 
     // 공급업체 선택 시 카테고리 업데이트
