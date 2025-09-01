@@ -53,6 +53,7 @@
 <img src="https://github.com/user-attachments/assets/37c88bce-c865-4ec5-acd8-18974d1eb058" style="width:100%; max-width:720px;" /> 
 
 ---
+<br>
 
 ## 2. 인사관리 - 사원관리
 
