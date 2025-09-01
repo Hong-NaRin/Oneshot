@@ -17,7 +17,6 @@
 | :------: | :------: | :------: | :------: | :------: | :------: |
 | [<img src="https://avatars.githubusercontent.com/u/172233963?s=64&v=4" style="width:120px; height:120px;" /><br/>@Hong-NaRin](https://github.com/Hong-NaRin) | [<img src="https://avatars.githubusercontent.com/u/80537541?s=64&v=4" style="width:120px; height:120px;" /><br/>@jishin14](https://github.com/jishin14) | [<img src="https://avatars.githubusercontent.com/u/172233951?s=64&v=4" style="width:120px; height:120px;" /><br/>@suhyun-kim9](https://github.com/suhyun-kim9) | [<img src="https://avatars.githubusercontent.com/u/180147317?v=4" style="width:120px; height:120px;" /><br/>@sxxxhyuk](https://github.com/sxxxhyuk) | [<img src="https://avatars.githubusercontent.com/u/172337052?v=4" style="width:120px; height:120px;" /><br/>@whfh3832](https://github.com/whfh3832) | [<img src="https://avatars.githubusercontent.com/u/80089798?s=64&v=4" style="width:120px; height:120px;" /><br/>@Hyeongu02](https://github.com/Hyeongu02) |
 <br>
-<br>
 
 ## 💻 개발 환경 및 기술 스택
 <img src="https://github.com/user-attachments/assets/3b9925a4-0a4c-41be-af5a-1aa2683f569a" alt="개발환경" />
@@ -32,8 +31,6 @@
 | **데이터베이스(DB)** | PostgreSQL 16.3 (AWS RDS) |
 | **데이터베이스 연동** | MyBatis |
 | **개발 도구(IDE)** | IntelliJ IDEA, VSCode |
-
-<br>
 <br>
 
 ## 🗂️ 설계 자료
@@ -56,16 +53,12 @@
 <img src="https://github.com/user-attachments/assets/37c88bce-c865-4ec5-acd8-18974d1eb058" style="width:100%; max-width:720px;" /> 
 
 ---
-<br>
 
 ## 2. 인사관리 - 사원관리
 
 <img src="https://github.com/user-attachments/assets/3ae20831-6250-4394-8cff-a4835ebc4e07" style="width:100%; max-width:720px;" />  
-
 <img src="https://github.com/user-attachments/assets/5fd0adcf-b1c6-4e2e-abe4-898d286d4bb0" style="width:100%; max-width:720px;" /> 
-
 <img src="https://github.com/user-attachments/assets/e00b404d-1d53-43a2-a2d0-d129053ed678" style="width:100%; max-width:720px;" />  
-
 <img src="https://github.com/user-attachments/assets/c13bebac-14ec-4885-944a-bf88da78f2a7" style="width:100%; max-width:720px;" />  
 
 ---
@@ -87,7 +80,6 @@
 <img src="https://github.com/user-attachments/assets/0cdabfe0-3c9a-4244-b198-00a584cab6ae" style="width:100%; max-width:720px;" />  
 <img src="https://github.com/user-attachments/assets/ac31f06a-be4e-4ec9-a998-43084816017b" style="width:100%; max-width:720px;" />  
 <img src="https://github.com/user-attachments/assets/bc86e89d-94d6-4d21-b32c-84882943c112" style="width:100%; max-width:720px;" />  
-<img src="https://github.com/user-attachments/assets/1e32bb4a-d8a1-43e2-a60d-7d87ee0cc62f" style="width:100%; max-width:720px;" />  
 
 ---
 <br>
